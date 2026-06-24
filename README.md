@@ -73,58 +73,45 @@ Berikut adalah galeri screenshot antarmuka dari aplikasi **Info Lintas** yang di
 
 ## 🏗️ Struktur Pembuatan Proyek (Step-by-Step)
 
+Jika Anda ingin membangun atau merekonstruksi ulang proyek ini dari nol, ikuti langkah-langkah teknis berikut yang sudah dipisah per berkas:
+
 ### 1. Inisialisasi Environment & Install Mongoose
+Jalankan perintah ini di terminal Anda untuk membuat kerangka dasar proyek Next.js baru dan memasang library Mongoose:
 ```bash
 npx create-next-app@latest info-lintas --js --tailwind --app --src-dir=false
 cd info-lintas
 npm install mongoose
 
-theme: {
-  extend: {
-    animation: {
-      marquee: 'marquee 30s linear infinite',
-    },
-    keyframes: {
-      marquee: {
-        '0%': { transform: 'translateX(0%)' },
-        '100%': { transform: 'translateX(-50%)' },
-      }
-    }
-  },
+### 2. Konfigurasi Animasi Marquee Slider (`app/globals.css`)
+Karena proyek ini menggunakan Tailwind CSS versi terbaru (v4+), konfigurasi animasi dilakukan langsung di dalam file CSS utama tanpa membutuhkan file `tailwind.config.js`. 
+
+Buka file `app/globals.css`, lalu tambahkan aturan `@theme` kustom berikut di bagian atas atau bawah file Anda agar komponen slider client dapat bergerak berjalan dengan mulus:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
 }
 
-'use client';
-import React from 'react';
+### 2. Konfigurasi Animasi Marquee Slider (`app/globals.css`)
+Karena proyek ini menggunakan Tailwind CSS versi terbaru (v4+), konfigurasi animasi dilakukan langsung di dalam file CSS utama tanpa membutuhkan file `tailwind.config.js`. 
 
-export default function SliderBawahClient({ beritaBawah }) {
-  return (
-    <div className="w-full overflow-hidden bg-gray-50 py-4 border-t border-b border-gray-200 relative group">
-      <div className="flex gap-6 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
-        {[...beritaBawah, ...beritaBawah].map((item, idx) => (
-          <a key={idx} href={`/berita/${item._id}`} className="w-64 flex-shrink-0 bg-white p-3 rounded-lg border border-gray-200 shadow-sm block hover:border-red-500 transition-colors">
-            <div className="w-full h-32 bg-gray-200 rounded overflow-hidden">
-              <img src={item.gambar} alt={item.judul} className="w-full h-full object-cover" />
-            </div>
-            <h4 className="text-xs font-bold mt-2 text-gray-950 line-clamp-2 hover:text-red-600 transition-colors">{item.judul}</h4>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+Buka file `app/globals.css`, lalu tambahkan aturan `@theme` kustom berikut di bagian atas atau bawah file Anda agar komponen slider client dapat bergerak berjalan dengan mulus:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
 }
-
-git clone [https://github.com/rizalfirmansyah120593-byte/WEB-BERITA-OTOMATIS-UPDATE-INFO-LINTAS-AI.git](https://github.com/rizalfirmansyah120593-byte/WEB-BERITA-OTOMATIS-UPDATE-INFO-LINTAS-AI.git)
-
-   cd web-berita-otomatis
-   npm install
-
-Jalankan MongoDB Lokal:
-Pastikan port default database Anda aktif pada string koneksi: mongodb://localhost:27017/berita_db
-
-Jalankan Aplikasi:
-npm run dev
-
-Buka http://localhost:3000 di peramban Anda.
-
-   💖 Dukung Pengembangan Proyek
-Jika arsitektur kode atau proyek ini bermanfaat bagi proses belajar Anda, berikan dukungan terbaik Anda dengan mentraktir secangkir kopi melalui tautan Saweria di bawah ini:
