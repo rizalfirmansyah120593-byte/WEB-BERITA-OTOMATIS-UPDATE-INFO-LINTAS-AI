@@ -57,16 +57,16 @@ Berikut adalah galeri screenshot antarmuka dari aplikasi **Info Lintas** yang di
 
 Jika Anda ingin membangun atau merekonstruksi ulang proyek ini dari nol, ikuti langkah-langkah teknis berikut yang sudah dipisah per berkas:
 
----
+☕ **Dukung Pengembangan Proyek**
+Jika arsitektur kode robot scraper atau sistem web portal berita ini bermanfaat bagi proses belajar Anda, Anda bisa memberikan dukungan apresiasi dengan memindai kode QR langsung menggunakan aplikasi e-wallet (Dana/OVO/Gopay/LinkAja) atau melalui tautan Saweria berikut:
 
-### ☕ Dukung Pengembangan Proyek
-Jika arsitektur kode robot scraper atau sistem web portal berita ini bermanfaat bagi proses belajar Anda, Anda bisa memberikan dukungan apresiasi terkecil melalui tautan Saweria di bawah ini:
-
-👉 **[Klik Disini Untuk Traktir Kopi via Saweria](https://saweria.co/RizalFirmansyah)**
+<p align="left">
+  <img src="./assets/qrcode.png" alt="Donasi via Saweria Rizal Firmansyah" width="180" style="border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 8px; shadow: sm;" />
+  <br />
+  👉 <b><a href="https://saweria.co/RizalFirmansyah" target="_blank">Klik Disini Untuk Traktir Kopi via Saweria</a></b>
+</p>
 
 *Apresiasi Anda sangat membantu dalam menjaga konsistensi riset pengembangan kode yang bersih dan performa tinggi!*
-
----
 
 ### 1. Inisialisasi Environment & Install Library
 Jalankan perintah ini di terminal Anda untuk membuat kerangka dasar proyek Next.js baru dan memasang library Mongoose:
